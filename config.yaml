@@ -83,3 +83,4 @@ proxy-groups:
 
 rules:
 - MATCH,SIMASTER
+- MATCH,GLOBAL
