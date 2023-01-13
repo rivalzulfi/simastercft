@@ -25,7 +25,7 @@ echo -e $b"➤ "$w" install paket: "$g"micro"$w
 pkg install micro
 echo ""
 
-cd $HOME/ClashForTermux
+cd $HOME/simastercft
 sleep 2
 
 echo -e $b"➤ "$w" coppying yacd-dashbord: "$g"yacd"$w
@@ -35,7 +35,7 @@ echo ""
 sleep 2
 
 echo -e $b"➤ "$w" coppying simcard.yaml: "$g"simcard"$w
-cp -r -f trojan.yaml $HOME/.config/clash
+cp -r -f simcard.yaml $HOME/.config/clash
 echo ""
 
 sleep 2
@@ -55,6 +55,5 @@ sleep 2
 rm -r -f yacd-gh-pages.zip
 sleep 2
 cd
-rm -r -f ClashForTermux
+rm -r -f simastercft
 clash
-clear
