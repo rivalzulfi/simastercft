@@ -7,7 +7,7 @@ w="\033[0m"
 mkdir -p $HOME/.config/clash
 echo ""
 
-echo -e $b"➤ "$w"Simaster CFT"
+echo -e $b"➤ "$w"simastercft"
 echo ""
 
 echo -e $b"➤ "$w" install paket simaster cft ..."
@@ -30,6 +30,18 @@ sleep 2
 
 echo -e $b"➤ "$w" coppying yacd-dashbord: "$g"yacd"$w
 cp -r -f yacd-gh-pages.zip $HOME/.config/clash
+echo ""
+
+sleep 2
+
+echo -e $b"➤ "$w" coppying clash: "$g"clash"$w
+cp -r -f clash $HOME/.config/clash
+echo ""
+
+sleep 2
+
+echo -e $b"➤ "$w" coppying clash_tun: "$g"clash_tun"$w
+cp -r -f clash_tun $HOME/.config/clash
 echo ""
 
 sleep 2
