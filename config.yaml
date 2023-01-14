@@ -126,7 +126,7 @@ rules:
 - Stream,SIMASTER
 - Olshop,SIMASTER
 - Bank,SIMASTER
-- Whatsapp,WHATSAPP
+- Whatsapp,SIMASTER
 - MATCH,SIMASTER
 tun:
   enable: true
