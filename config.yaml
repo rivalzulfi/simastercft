@@ -121,7 +121,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-whatsapp.yaml
     interval: 3600
 rules:
-- Game,GAMING
+- Game,SIMASTER
 - Sosmed,SIMASTER
 - Stream,SIMASTER
 - Olshop,SIMASTER
