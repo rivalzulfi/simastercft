@@ -1,9 +1,9 @@
 port: 7890
 socks-port: 7891
-#redir-port: 7892
+redir-port: 7892
 mixed-port: 7893
-#tproxy-port: 7895
-mode: global
+tproxy-port: 7895
+mode: rule
 log-level: info
 allow-lan: true
 external-controller: 0.0.0.0:9090
@@ -13,15 +13,19 @@ external-ui: yacd-gh-pages
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   listen: 127.0.0.1:7894
   use-hosts: true
   nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - https://dns.google/dns-query
+    - tls://dns.google
     - https://cloudflare-dns.com/dns-query
     - tls://1dot1dot1dot1.cloudflare-dns.com
   fallback:
     - https://dns.google/dns-query
-
+    - tls://dns.google
 proxy-providers:
   Simcard:
     type: file
@@ -29,8 +33,7 @@ proxy-providers:
     health-check:
       enable: false
       url: http://www.gstatic.com/generate_204
-      interval: 300
-      
+      interval: 300     
 #Gunakan tanda pagar menghiden, jika salah satu server tidak kepakai
 proxy-groups:
 - name: SIMASTER
@@ -80,7 +83,58 @@ proxy-groups:
     - Simcard
   url: http://www.gstatic.com/generate_204
   interval: '99'
-
+rule-providers:
+  Game:
+    type: http
+    behavior: domain
+    path: "./rule-game.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-game.yaml
+    interval: 3600
+  Sosmed:
+    type: http
+    behavior: domain
+    path: "./rule-stream.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-sosmed.yaml
+    interval: 3600
+  Stream:
+    type: http
+    behavior: domain
+    path: "./rule-stream.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-stream.yaml
+    interval: 3600
+  Olshop:
+    type: http
+    behavior: domain
+    path: "./rule-olshop.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-olshop.yaml
+    interval: 3600
+  Bank:
+    type: http
+    behavior: domain
+    path: "./rule-bank.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-bank.yaml
+    interval: 3600
+  Whatsapp:
+    type: http
+    behavior: domain
+    path: "./rule-whatsapp.yaml"
+    url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-whatsapp.yaml
+    interval: 3600
 rules:
+- RULE-SET,Game,GAMING
+- RULE-SET,Sosmed,SIMASTER-AUTO
+- RULE-SET,Stream,SIMASTER-AUTO
+- RULE-SET,Olshop,SIMASTER-AUTO
+- RULE-SET,Bank,SIMASTER-AUTO
+- RULE-SET,Whatsapp,WHATSAPP
 - MATCH,SIMASTER
-- MATCH,GLOBAL
+tun:
+  enable: true
+  stack: system
+  auto-route: false
+  auto-detect-interface: false
+  dns-hijack:
+  - tcp://any:53
+profile:
+  store-selected: true
+  store-fake-ip: true
