@@ -121,12 +121,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/mwnsofficial/simaster-auto/main/rule_provider/rule-whatsapp.yaml
     interval: 3600
 rules:
-- RULE-SET,Game,GAMING
-- RULE-SET,Sosmed,SIMASTER-AUTO
-- RULE-SET,Stream,SIMASTER-AUTO
-- RULE-SET,Olshop,SIMASTER-AUTO
-- RULE-SET,Bank,SIMASTER-AUTO
-- RULE-SET,Whatsapp,WHATSAPP
+- Game,GAMING
+- Sosmed,SIMASTER
+- Stream,SIMASTER
+- Olshop,SIMASTER
+- Bank,SIMASTER
+- Whatsapp,WHATSAPP
 - MATCH,SIMASTER
 tun:
   enable: true
