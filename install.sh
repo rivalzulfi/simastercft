@@ -30,7 +30,7 @@ echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" coppying clash: "$g"clash"$w
+echo -e $b"➤ "$w" git clone https://github.com/Dreamacro/clash.git: "$g"clash"$w
 cp -r -f clash $HOME/.config/clash
 echo ""
 
