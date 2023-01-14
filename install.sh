@@ -30,18 +30,6 @@ echo ""
 
 sleep 2
 
-echo -e $b"➤ "$w" git clone https://github.com/Dreamacro/clash.git: "$g"clash"$w
-cp -r -f clash $HOME/.config/clash
-echo ""
-
-sleep 2
-
-echo -e $b"➤ "$w" coppying clash_tun: "$g"clash_tun"$w
-cp -r -f clash_tun $HOME/.config/clash
-echo ""
-
-sleep 2
-
 echo -e $b"➤ "$w" coppying simcard.yaml: "$g"simcard"$w
 cp -r -f simcard.yaml $HOME/.config/clash
 echo ""
@@ -63,5 +51,6 @@ sleep 2
 rm -r -f yacd-gh-pages.zip
 sleep 2
 cd
+
 rm -r -f simastercft
 clash
