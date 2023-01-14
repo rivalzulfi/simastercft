@@ -13,10 +13,6 @@ echo ""
 echo -e $b"➤ "$w" install paket simaster cft ..."
 echo ""
 
-echo -e $b"➤ "$w" install paket: "$g"clash"$w
-pkg install clash
-echo ""
-
 echo -e $b"➤ "$w" install paket: "$g"unzip"$w
 pkg install unzip
 echo ""
